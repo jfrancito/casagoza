@@ -53,11 +53,21 @@ Route::group(['middleware' => ['authaw']], function () {
 	Route::any('/subir-imagenes-precotizacion/{idopcion}/{idprecotizacion}', 'PreCotizacionController@actionSubirImagenesPrecotizacion');
 	Route::any('/emitir-precotizacion/{idopcion}', 'PreCotizacionController@actionEmitirPrecotizacion');
 
-
 	Route::any('/gestion-de-cotizacion/{idopcion}', 'CotizacionController@actionListarcotizaciones');
 	Route::any('/ajax-modal-configuracion-cotizacion-detalle', 'CotizacionController@actionConfigurarDetalle');
 	Route::any('/cotizar-cotizacion/{idopcion}/{idcotizacion}', 'CotizacionController@actionCotizarcotizacion');
 	Route::any('/ajax-modal-modificar-configuracion-cotizacion-detalle', 'CotizacionController@actionAjaxModalModificarConfiguracionCotizacion');
+
+
+	Route::any('/gestion-de-grupo-servicio/{idopcion}', 'ConfiguarionController@actionListarGrupoServicio');
+	Route::any('/agregar-grupo-servicio/{idopcion}', 'ConfiguarionController@actionAgregarGrupoServicio');
+	Route::any('/modificar-grupo-servicio/{idopcion}/{idcategoria}', 'ConfiguarionController@actionModificarGrupoServicio');
+
+
+	Route::any('/gestion-de-unidad-medida/{idopcion}', 'ConfiguarionController@actionListarUnidadMedida');
+	Route::any('/agregar-unidad-medida/{idopcion}', 'ConfiguarionController@actionAgregarUnidadMedida');
+	Route::any('/modificar-unidad-medida/{idopcion}/{idcategoria}', 'ConfiguarionController@actionModificarUnidadMedida');
+
 
 	Route::any('/ajax-elimnar-linea-cotizacion', 'CotizacionController@actionAjaxEliminarLineaCotizacion');
 

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Crypt;
 
 use App\Modelos\Cliente;
-
+use App\Modelos\Categoria;
 
 use View;
 use Session;
@@ -20,6 +20,12 @@ use Keygen;
 trait ConfiguracionTraits
 {
 	
+	private function con_lista_categoria($tipo_categoria) {
+		$categoria 	= 	Categoria::where('tipo_categoria','=',$tipo_categoria)
+						->get();
+	 	return  $categoria;
+	}
+
 	private function con_lista_clientes() {
 		$cliente 	= 	Cliente::get();
 	 	return  $cliente;
