@@ -17,7 +17,6 @@
               <div class="panel panel-default panel-border-color panel-border-color-success">
                 <div class="panel-heading">Lista de Cotizaciones
                   <div class="tools tooltiptop">
-
                     <form method="POST" id='formpedido' class='opciones' action="{{ url('/emitir-cotizacion/'.$idopcion) }}" 
                     style="display: inline-block;" >
                       {{ csrf_field() }}
@@ -27,10 +26,8 @@
                         <span class="icon mdi mdi-mail-send"></span>
                       </a>
                     </form>
-
                   </div>
                 </div>
-
                 <div class="panel-body">
                   <div class='filtrotabla row'>
                     <div class="col-xs-12">
@@ -45,7 +42,6 @@
             </div>
           </div>
     </div>
-
   </div>
 
 @stop

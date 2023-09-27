@@ -1,6 +1,29 @@
 $(document).ready(function(){
 
     var carpeta = $("#carpeta").val();
+
+
+    $(".ventacotizar").on('click','.analisiscotizacion', function() {
+
+        var _token                      =   $('#token').val();
+        var cotizacion_id               =   $(this).attr('data_cotizacion_id');
+        var detalle_cotizacion_id       =   $(this).attr('data_detalle_cotizacion_id');
+        var idopcion                    =   $('#idopcion').val();
+
+        data                            =   {
+                                                _token                      : _token,
+                                                cotizacion_id               : cotizacion_id,
+                                                detalle_cotizacion_id       : detalle_cotizacion_id,
+                                                idopcion                    : idopcion
+                                            };
+
+        var section                     =   'analizar';
+        $('.nav-tabs a[href="#analizar"]').tab('show');
+
+        ajax_normal_section(data,"/ajax-analizar-detalle-cotizacion",section);                                    
+
+    });
+
     $(".ventacotizar").on('click','.agregalinea', function() {
         var _token                  =   $('#token').val();
         var cotizacion_id           =   $(this).attr('data_cotizacion');
@@ -15,17 +38,20 @@ $(document).ready(function(){
     });
 
 
-
-
     $(".ventacotizar").on('click','.btn-guardar-configuracion', function() {
 
         var gruposervicio_id                =   $('#gruposervicio_id').val();
         var unidadmedida_id                 =   $('#unidadmedida_id').val();
         var servicio                        =   $('#servicio').val();
+        var cantidad                        =   $('#cantidad').val();
+
         //validacioones
         if(gruposervicio_id ==''){ alerterrorajax("Seleccione una grupo de servicio."); return false;}
         if(unidadmedida_id ==''){ alerterrorajax("Seleccione una unidad de medida."); return false;}
         if(servicio ==''){ alerterrorajax("Ingrese un servicio."); return false;}
+        if(cantidad ==''){ alerterrorajax("Ingrese un cantidad."); return false;}
+
+
         return true;
 
     });
@@ -80,11 +106,8 @@ $(document).ready(function(){
     });
 
 
-
     function elimnarlinea(data){
         ajax_normal_cargar(data,"/ajax-elimnar-linea-cotizacion");
     }
-
-
 
 });

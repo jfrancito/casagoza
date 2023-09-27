@@ -57,6 +57,14 @@ Route::group(['middleware' => ['authaw']], function () {
 	Route::any('/ajax-modal-configuracion-cotizacion-detalle', 'CotizacionController@actionConfigurarDetalle');
 	Route::any('/cotizar-cotizacion/{idopcion}/{idcotizacion}', 'CotizacionController@actionCotizarcotizacion');
 	Route::any('/ajax-modal-modificar-configuracion-cotizacion-detalle', 'CotizacionController@actionAjaxModalModificarConfiguracionCotizacion');
+	Route::any('/ajax-analizar-detalle-cotizacion', 'CotizacionController@actionAnalizarDetalleCotizacion');
+	Route::any('/ajax-agregar-producto-analisis', 'CotizacionController@actionAgregarProductoAnalisis');
+	Route::any('/ajax-actualizar-tabla-cotizacion', 'CotizacionController@actionActulizarTablaCotizacion');
+	Route::any('/ajax-eliminar-tabla-cotizacion-analisis', 'CotizacionController@actionEliminarTablaCotizacionAnalisis');
+
+
+
+
 
 
 	Route::any('/gestion-de-grupo-servicio/{idopcion}', 'ConfiguarionController@actionListarGrupoServicio');

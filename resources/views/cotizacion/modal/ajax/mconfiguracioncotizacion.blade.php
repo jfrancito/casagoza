@@ -56,6 +56,26 @@
 					        </div>
 					    </div>
 		        </div>
+
+
+
+		    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="form-group">
+					  <label class="col-sm-12 control-label labelleft negrita" >Cantidad <span class="obligatorio">(*)</span> :</label>
+					  <div class="col-sm-12">
+
+					      <input  type="text"
+					              id="cantidad" name='cantidad' 
+					              value="@if(isset($detalle)){{old('cantidad' ,$detalle->cantidad)}}@endif" 
+					              placeholder="Cantidad"
+					              autocomplete="off" class="form-control input-sm importe" data-aw="1"/>
+
+					  </div>
+					</div>
+				</div>
+
+
+
 		    </div>
 		    <div class="col-md-6">
 		    </div>
@@ -70,7 +90,7 @@
     $(document).ready(function(){
       App.formElements();
       $('.importe').inputmask({ 'alias': 'numeric', 
-      'groupSeparator': ',', 'autoGroup': true, 'digits': 0, 
+      'groupSeparator': ',', 'autoGroup': true, 'digits': 2, 
       'digitsOptional': false, 
       'prefix': '', 
       'placeholder': '0'});

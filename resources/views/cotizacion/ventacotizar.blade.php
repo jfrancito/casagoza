@@ -35,11 +35,11 @@
           </div>
           <div class="panel-body">
 
-
                 <div class="tab-container">
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#cotizar" data-toggle="tab">Cotizar</a></li>
                     <li><a href="#precotizar" data-toggle="tab">Pre - Cotizar</a></li>
+                    <li class="disabled"><a href="#analizar" data-toggle="tab">Analizar</a></li>
                   </ul>
                   <div class="tab-content">
                     <div id="cotizar" class="tab-pane active cont">
@@ -47,18 +47,15 @@
                                 {{ csrf_field() }}
                            @include('cotizacion.form.fcotizar')
                         </form>
-
                     </div>
                     <div id="precotizar" class="tab-pane cont">
                       @include('precotizacion.vista.data')
                     </div>
+                    <div id="analizar" class="tab-pane cont analizar">
+
+                    </div>
                   </div>
                 </div>
-
-
-  
-
-
           </div>
         </div>
       </div>
@@ -130,6 +127,7 @@
 
     </script> 
 
-  <script src="{{ asset('public/js/venta/cotizacion.js?v='.$version) }}" type="text/javascript"></script>
+    <script src="{{ asset('public/js/venta/cotizacion.js?v='.$version) }}" type="text/javascript"></script>
+    <script src="{{ asset('public/js/venta/actualizartabla.js?v='.$version) }}" type="text/javascript"></script>
 
 @stop
